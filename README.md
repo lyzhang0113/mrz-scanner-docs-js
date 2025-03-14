@@ -1,0 +1,1 @@
+Dynamsoft MRZ Scanner JS Edition Docs
