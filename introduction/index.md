@@ -20,11 +20,11 @@ When it comes to reading MRZ documents, it is important to find a library that n
 
 The MRZ Scanner JavaScript Edition relies on three of Dynamsoft's core products:
 
-1. [**Dynamsoft Label Recognizer**]({{ site.dcv_introduction }}introduction/index.html#dynamsoft-label-recognizer) - A zonal OCR library that is responsible for the text extraction portion of the MRZ scanning workflow.
+1. [**Dynamsoft Label Recognizer**]({{ site.dcvb_root }}introduction/index.html#dynamsoft-label-recognizer) - A zonal OCR library that is responsible for the text extraction portion of the MRZ scanning workflow.
 
-2. [**Dynamsoft Code Parser**]({{ site.dcv_introduction }}introduction/index.html#dynamsoft-code-parser) - The library designed for parsing encrypted results from the *Barcode Reader* or *Label Recognizer* into human-readable information.
+2. [**Dynamsoft Code Parser**]({{ site.dcvb_root }}introduction/index.html#dynamsoft-code-parser) - The library designed for parsing encrypted results from the *Barcode Reader* or *Label Recognizer* into human-readable information.
 
-3. [**Dynamsoft Camera Enhancer**]({{ site.dcv_introduction }}introduction/index.html#dynamsoft-camera-enhancer) - The library that is responsible for all camera control features, in addition to camera enhancements and basic UI configuration features.
+3. [**Dynamsoft Camera Enhancer**]({{ site.dcvb_root }}introduction/index.html#dynamsoft-camera-enhancer) - The library that is responsible for all camera control features, in addition to camera enhancements and basic UI configuration features.
 
 ## Common Usage Scenarios
 
@@ -130,6 +130,10 @@ The table below lists the **minimum supported versions** of browsers based on th
 |  Edge   |  v92+   |
 
 <sup>1</sup> iOS 14.3+ is required for camera video streaming in Chrome and Firefox or Apps using webviews.
+
+## Live Demo
+
+For the best demonstration of the full capabilities of the MRZ Scanner JavaScript Edition, please visit the [official Dynamsoft MRZ Scanner JavaScript demo](https://demo.dynamsoft.com/mrz-scanner/).
 
 ## Next Steps
 

@@ -43,6 +43,10 @@ Hello World represents the most basic implementation of the MRZ Scanner. One of 
 </html>
 ```
 
+## Live Demo
+
+For the best demonstration of the full capabilities of the MRZ Scanner JavaScript Edition, please visit the [official Dynamsoft MRZ Scanner JavaScript demo](https://demo.dynamsoft.com/mrz-scanner/). Please note that this demo is more sophisticated than the Hello World implementation, so if you are curious about it, please visit the [Demo]({{ site.codegallery }}demo/index.html) section of the code gallery.
+
 ## Conclusion
 
 As you can see, all it takes 6 lines (not counting the comments) to get the MRZ Scanner up and running!

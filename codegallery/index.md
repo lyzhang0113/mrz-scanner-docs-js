@@ -25,3 +25,7 @@ The full code of Hello World can be found [**here**](helloworld/index.md).
 The demo implementation adds a bit more colour and character to the Hello World implementation, and in turn helping you create a presentable and friendly design for your MRZ scanning application!
 
 The full code of the Demo can be found [**here**](demo/index.md).
+
+## Official Dynamsoft MRZ Scanner Online Demo
+
+For the best demonstration of the full capabilities of the MRZ Scanner JavaScript Edition, please visit the [official Dynamsoft MRZ Scanner JavaScript demo](https://demo.dynamsoft.com/mrz-scanner/).
