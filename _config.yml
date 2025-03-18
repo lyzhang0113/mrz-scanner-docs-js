@@ -1,0 +1,67 @@
+repository: dynamsoft-docs/mrz-scanner-docs-js
+repositoryUrl: https://github.com/dynamsoft-docs/mrz-scanner-docs-js/blob/main
+docFullPath: https://www.dynamsoft.com/mrz-scanner/docs/web/
+firstLevelUrl: /mrz-scanner/docs/web
+docHomePage: /mrz-scanner/docs/web/introduction/
+
+introduction: /mrz-scanner/docs/web/introduction/
+gettingstarted: /mrz-scanner/docs/web/gettingstarted/
+codegallery: /mrz-scanner/docs/web/codegallery/
+api: /mrz-scanner/docs/web/api/
+releasenotes: /mrz-scanner/docs/web/releasenotes/
+
+guides: /mrz-scanner/docs/web/guides/
+
+dcvb_introduction: /capture-vision/docs/core/introduction/
+dcvb_architecture: /capture-vision/docs/core/architecture/
+dcvb_parameters: /capture-vision/docs/core/parameters/reference/
+dcvb_parameter_file: /capture-vision/docs/core/parameters/file/
+dcvb_enums: /capture-vision/docs/core/enums/
+license_activation: /capture-vision/docs/core/license/
+
+dcvb_js: /capture-vision/docs/web/programming/javascript/
+dcvb_js_api: /capture-vision/docs/web/programming/javascript/api-reference/
+dbr_js: /barcode-reader/docs/web/programming/javascript/
+dlr_js: /label-recognition/docs/web/programming/javascript/
+ddn_js: /document-normalizer/docs/web/programming/javascript/
+dcp_js: /code-parser/docs/web/programming/javascript/
+dce_js: /camera-enhancer/docs/web/programming/javascript/
+dbr_js_api: /barcode-reader/docs/web/programming/javascript/api-reference/
+dlr_js_api: /label-recognition/docs/web/programming/javascript/api-reference/
+ddn_js_api: /document-normalizer/docs/web/programming/javascript/api-reference/
+dcp_js_api: /code-parser/docs/web/programming/javascript/api-reference/
+dce_js_api: /camera-enhancer/docs/web/programming/javascript/api-reference/
+code_types: /code-parser/docs/core/code-types/
+dcvb_root: /capture-vision/docs/core/
+mrz_js: /mrz-scanner/docs/web/
+
+useVersionTree: true
+
+assets: /mrz-scanner/docs/web/assets/
+edit_icon: /mrz-scanner/docs/web/assets/img-icon/edit-icon.png
+smile_icon: /mrz-scanner/docs/web/assets/img-icon/icon-smile.png
+sad_icon: /mrz-scanner/docs/web/assets/img-icon/icon-sad.png
+
+baseurl: "/mrz-scanner/docs/web"
+
+download: "/mrz-scanner/downloads/"
+
+plugins:
+  - jemoji
+  - jekyll-sitemap
+
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default-layout"
+      noTitleIndex: true
+      needAutoGenerateSidebar: true
+      needGenerateH3Content: true
+  - scope:
+      path: "Hide_Tree_Page.html"
+    values:
+      sitemap: false
+
+url: "https://www.dynamsoft.com" # sitemap root
