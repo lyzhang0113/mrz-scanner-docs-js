@@ -74,25 +74,25 @@ We will now introduce the two views that make up the core of the MRZ Scanner to 
 
 ### Views
 
-The **MRZ Scanner JavaScript Edition** is reliant on two core views, the **MRZScannerView** and the **MRZResultView**.
+The **MRZ Scanner JavaScript Edition** is reliant on two core views, the **`MRZScannerView`** and the **`MRZResultView`**.
 
-#### MRZScannerView
+#### `MRZScannerView`
 
-The **MRZScannerView** is the main view of the solution which displays the camera view, along with some UI elements that control the scanner and camera settings, along with icons to allow the user to load in a photo from the photo library as well as close the scanner. This view comes with a scan guide frame in the center to better guide the user on where to place the MRZ document for best results. 
+The **`MRZScannerView`** is the main view of the solution which displays the camera view, along with some UI elements that control the scanner and camera settings, along with icons to allow the user to load in a photo from the photo library as well as close the scanner. This view comes with a scan guide frame in the center to better guide the user on where to place the MRZ document for best results. 
 
-Here is a quick screenshot at default look of the **MRZScannerView**:
+Here is a quick screenshot at default look of the **`MRZScannerView`**:
 
 <div>
    <img src="../assets/imgs/mrzscannerview-sample.jpeg" alt="MRZScannerView Screenshot" width="25%" />
 </div>
 
-#### MRZResultView
+#### `MRZResultView`
 
-The **MRZResultView** is responsible for displaying the final parsed results of the MRZ recognition process. The final parsed results, along with their corresponding field names, appear as a scrollable form view underneath the original image of the MRZ document. 
+The **`MRZResultView`** is responsible for displaying the final parsed results of the MRZ recognition process. The final parsed results, along with their corresponding field names, appear as a scrollable form view underneath the original image of the MRZ document. 
 
 Included with those two things are two buttons, one that allows the user to scan again if needed, and the other to wrap up the scanning process and proceed to the next step (like navigating to another page).
 
-Here is a quick screenshot at the default look of the **MRZResultView**:
+Here is a quick screenshot at the default look of the **`MRZResultView`**:
 
 <div>
    <img src="../assets/imgs/mrzresultview-sample.jpeg" alt="MRZResultView Screenshot" width="25%" />
