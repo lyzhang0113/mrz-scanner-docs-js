@@ -62,7 +62,7 @@ When using a framework such as **React**, **Vue** or **Angular**, we recommend a
 
 **Important Note:**
 
-When using a package manager like **npm** or **yarn**, you likely need to specify the location of the engine files as a link to a CDN. Please see the [MRZScannerConfig API]({{ site.api }}mrz-scanner.html#mrzscannerconfig) for a code snippet on how to set the *engineResourcePaths*.
+When using a package manager like **npm** or **yarn**, you likely need to specify the location of the engine files as a link to a CDN. Please see the [`MRZScannerConfig` API]({{ site.api }}mrz-scanner.html#mrzscannerconfig) for a code snippet on how to set the `engineResourcePaths`.
 
 Below is the complete Hello World sample page that uses the precompiled script served via a CDN.
 
@@ -97,7 +97,7 @@ Below is the complete Hello World sample page that uses the precompiled script s
 >
 > This code is identical to the Hello World file mentioned in *Build from Source*, except for the script source.
 >
-> Please do not forget to replace 'YOUR_LICENSE_KEY_HERE' with your own license key, whether it is trial or full.
+> Please do not forget to replace `YOUR_LICENSE_KEY_HERE` with your own license key, whether it is trial or full.
 
 To run the sample, create a new file called `hello-world.html`, then copy and paste the code above into the file. Next, serve the page directly by deploying it to a server.
 
@@ -194,7 +194,7 @@ Above is the **simplest** way to initialize the MRZ Scanner. Note the configurat
 })();
 ```
 
-Now that the MRZ Scanner has been initialized and configured, it is ready to be launched! Upon launch, the MRZ Scanner presents the main **MRZScannerView** UI in its container on the page, and is ready to start scanning. Upon scanning an MRZ (via video or static image), the MRZ Scanner then switches to the **MRZResultView** , which displays a cropped image of the MRZ document as well as the parsed fields of the MRZ text. Let's break down these two Views:
+Now that the MRZ Scanner has been initialized and configured, it is ready to be launched! Upon launch, the MRZ Scanner presents the main **`MRZScannerView`** UI in its container on the page, and is ready to start scanning. Upon scanning an MRZ (via video or static image), the MRZ Scanner then switches to the **`MRZResultView`** , which displays a cropped image of the MRZ document as well as the parsed fields of the MRZ text. Let's break down these two Views:
 
 #### `MRZScannerView`
 
@@ -202,13 +202,13 @@ The `MRZScannerView` is composed of the following UI elements:
 
 1. **Camera View**: The Camera View is the camera viewfinder UI component within the `MRZScannerView`. This viewfinder occupies the majority of the space within the MRZScannerView to give the user a clear view and precise control of the image being scanned.
 
-2. **Scan Guide Frame**: The Scan Guide Frame is an overlay placed on top of the Camera View that guides the user to place the MRZ document in the middle of the Camera View, in order to achieve a fast and accurate scan. The guide frame is enabled **by default**, but may be hidden via the **MRZScannerViewConfig** interface. Note that if scan guide frame is enabled, the scanner also crops out the region outside the guide frame.
+2. **Scan Guide Frame**: The Scan Guide Frame is an overlay placed on top of the Camera View that guides the user to place the MRZ document in the middle of the Camera View, in order to achieve a fast and accurate scan. The guide frame is enabled **by default**, but may be hidden via the **`MRZScannerViewConfig`** interface. Note that if scan guide frame is enabled, the scanner also crops out the region outside the guide frame.
 
 <div align="center">
    <img src="../assets/imgs/mrz-scan-guides.png" alt="Scan Guide Frames" width="80%" />
 </div>
 
-3. **Format Selector**: Below the scan guide frame, you will also notice a selector box that allows the user to choose which formats the MRZ Scanner should recognize. The formats that show up in the format selector are configurable via the **MRZScannerConfig** interface, while the visibility of the format selector itself is configurable via the **MRZScannerViewConfig** interface. To learn about MRZ formats, please refer to the [Introduction]({{ site.introduction }}index.html#supported-mrz-formats) page.
+3. **Format Selector**: Below the scan guide frame, you will also notice a selector box that allows the user to choose which formats the MRZ Scanner should recognize. The formats that show up in the format selector are configurable via the **`MRZScannerConfig`** interface, while the visibility of the format selector itself is configurable via the **`MRZScannerViewConfig`** interface. To learn about MRZ formats, please refer to the [Introduction]({{ site.introduction }}index.html#supported-mrz-formats) page.
 
 <div align="center">
    <img src="../assets/imgs/format-selector.png" alt="Scan Guide Frames" width="40%" />
@@ -232,9 +232,9 @@ Here is a quick breakdown of the constituent UI elements of the result view:
 
 2. **Parsed Results**: The data parsed from the MRZ code, displayed with their corresponding field names (e.g. Given Name, Nationality, etc.) are placed below the cropped image of the MRZ corresponding field names. In addition to displaying these parsed results, the MRZ Scanner allows the user to edit the values of the fields in case of any errors by cross referencing from the cropped MRZ document displayed directly above.
 
-3. **Re-take Button**: This button discards the previous scan and parsed data, then takes the user back to the **MRZScannerView** to scan another MRZ document.
+3. **Re-take Button**: This button discards the previous scan and parsed data, then takes the user back to the **`MRZScannerView`** to scan another MRZ document.
 
-4. **Done Button**: This button closes the scanner and destroys the **MRZScanner** instance, and returns the result object containing the MRZ scan. At that point, the application goes back to the landing page. You can additionally dictate further actions upon the button click, such as allowing the user to perform some extra actions with the MRZ result, navigating to another page, passing the result object for further processing, and more.
+4. **Done Button**: This button closes the scanner and destroys the **`MRZScanner`** instance, and returns the result object containing the MRZ scan. At that point, the application goes back to the landing page. You can additionally dictate further actions upon the button click, such as allowing the user to perform some extra actions with the MRZ result, navigating to another page, passing the result object for further processing, and more.
 
   >Note: In the Hello World sample, no action is taken once the Done button is clicked. The scanner closes and the user is met with an empty page. In order to open the scanner again, the user must refresh the page. You may choose to implement a more user-friendly behavior in a production environment, such as presenting the user with an option to re-open the MRZ Scanner upon closing it.
 
