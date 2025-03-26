@@ -11,7 +11,7 @@ permalink: /guides/mrz-scanner-customization.html
 
 # Customizing the MRZ Scanner JavaScript Edition
 
->**Prerequisite**
+>[!NOTE]
 >
 >Before going into the ways that you can customize the MRZ Scanner, please read the [MRZ Scanner JavaScript Edition User Guide]({{ site.guides }}mrz-scanner.html).
 
@@ -43,6 +43,7 @@ Next, we go over the different ways that these properties can be used to customi
 
 ### Setting Available MRTD formats
 
+> [!TIP]
 > Prerequisite: [Introduction to MRZ Formats]({{ site.introduction }}index.html#supported-mrz-formats)
 
 The MRZ Scanner reads all three MRZ formats, but it can optionally restrict the MRZ format that it reads. For example, you may want to configure MRZ scanner to only read **TD1** and passport (**TD3**) document types, while **ignoring TD2** documents. Here is a quick snippet based on the Hello World code (from the [User Guide]({{ site.guides }}mrz-scanner.html)) that sets the specific MRZ formats to read using the `mrzFormatType1` property:
@@ -93,7 +94,7 @@ const mrzScanner = new Dynamsoft.MRZScanner({
 
 2. **`enableMultiFrameCrossFilter`** (default value `false`) - enable the multi-frame result cross filter to improve read accuracy at the cost of a slight increase to MRZ read time.
 
-> **Important Note**
+> [!NOTE]
 >
 > Not every UI element of the MRZScannerView can be controlled by the MRZScannerViewConfig. Namely, the **torch/flash button** will always show up in the **MRZScannerView**.
 
