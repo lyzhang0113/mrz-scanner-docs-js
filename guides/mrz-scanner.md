@@ -168,7 +168,7 @@ Let's now go through the code of the Hello World sample to understand how the co
 </html>
 ```
 
-The first step in setting up the HTML in the Hello World project is to include the SDK. (We discussed the two available methods to include the SDK resources in the earlier section [Quick Start](#quick-start---hello-world) section) In this example, we include the precompiled MRZ Scanner SDK script via CDN in the header:
+The first step in setting up the HTML in the Hello World project is to include the SDK. (We discussed the two available methods to include the SDK resources in the earlier [Quick Start](#quick-start---hello-world) section) In this example, we include the precompiled MRZ Scanner SDK script via CDN in the header:
 
 MRZ Scanner comes with a **Ready-to-Use UI**. When the MRZ Scanner launches, it creates a container which it populates with the **Ready-to-Use UI**.
 

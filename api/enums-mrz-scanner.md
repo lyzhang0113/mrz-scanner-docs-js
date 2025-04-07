@@ -30,7 +30,7 @@ enum EnumMRZDocumentType {
 ### Syntax
 
 ```ts
-export enum EnumResultStatus {
+enum EnumResultStatus {
   RS_SUCCESS = 0,
   RS_CANCELLED = 1,
   RS_FAILED = 2,
@@ -42,7 +42,7 @@ export enum EnumResultStatus {
 ### Syntax
 
 ```ts
-export enum EnumMRZData {
+enum EnumMRZData {
   InvalidFields = "invalidFields",
   DocumentType = "documentType",
   DocumentNumber = "documentNumber",

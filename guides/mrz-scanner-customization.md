@@ -70,7 +70,7 @@ const mrzScanner = new Dynamsoft.MRZScanner({
 
 ## `MRZScannerViewConfig` Overview
 
-**`MRZScannerViewConfig`** control the UI elements of the `**MRZScannerView**`, which is the view responsible for scanning operations. Here are its three properties in detail:
+**`MRZScannerViewConfig`** control the UI elements of the `**MRZScannerView**`, which is the view responsible for scanning operations. Here are its properties in detail:
 
 1. **`cameraEnhancerUIPath`** - define the path to a custom HTML user interface file for the `MRZScannerView`, which is based on the UI for the Dynamsoft Camera Enhancer SDK used by the MRZ Scanner. Setting the path to a custom file allows this custom UI to take effect for any `MRZScanner` instance created within your application. We recommend you to reach out to the [Dynamsoft Technical Support Team](https://www.dynamsoft.com/company/contact/) to assist you in creating such a custom UI.
 
@@ -153,7 +153,7 @@ const mrzScanner = new Dynamsoft.MRZScanner({
    },
    resultViewConfig: {
       showOriginalImage: false, // hides the cropped image of the MRZ document in the result view; true by default
-      allowResultEditing: false, // disables the ability to edit the result fields should the parsed information not match the MRZ document; true by default
+      allowResultEditing: true, // enables the ability to edit the result fields should the parsed information not match the MRZ document; false by default
       toolbarButtonsConfig: {
          retake: {
             icon: "path to a png/svg file" // Changes the icon image of the retake button
@@ -193,3 +193,29 @@ const mrzScanner = new Dynamsoft.MRZScanner({
 ```
 
 Here, when the user clicks *Done*, the application prints the result status code, status message, and the first name from the scanned document to the console. The `MRZResult` object (named `result` in the sample) contains each parsed text field, the full MRZ text string, and the cropped image of the scanned MRZ document. You web application can rely on the MRZ Scanner to parse the MRZ string and easily use MRZ fields using the `result.data.{fieldName}` scheme as shown above.
+
+### Enable Result Editing
+
+There could be certain cases where the parsed fields in the final **MRZResultView** do not pass validation as they fail the check digit step of the parsing process. To better deal with those cases, the MRZ Scanner has the feature to allow the user to edit the result fields directly.
+
+By enabling this feature, users can verify the parsed information provided by the MRZ Scanner is correct compared to the information present on the MRZ document. This feature acts as a sort of safety net for any results that don't pass the validation check or if the user just wants to make sure that the parsed information from the MRZ matches the information on the MRZ document.
+
+```ts
+const mrzScanner = new Dynamsoft.MRZScanner({
+   license: "YOUR_LICENSE_KEY_HERE",
+   scannerViewConfig: {
+      /* see the MRZScannerViewConfig section to learn how to set this */
+   },
+   resultViewConfig: {
+      allowResultEditing: false,
+   }
+});
+```
+
+By changing *allowResultEditing* in the `resultViewConfig`, the user will now see a slightly different UI in the result view. Below is a  screenshot showing the UI difference
+
+<div align="center">
+   <img src="../assets/imgs/ResultEditUI-MRZ.png" alt="MRZ Result View Editing Feature" width="70%" />
+</div>
+
+As you can see above, when result editing is enabled, the result fields will change into editable fields like in a form. 

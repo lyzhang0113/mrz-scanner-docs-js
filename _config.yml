@@ -35,6 +35,8 @@ code_types: /code-parser/docs/core/code-types/
 dcvb_root: /capture-vision/docs/core/
 mrz_js: /mrz-scanner/docs/web/
 
+dwt: /web-twain/docs/
+
 useVersionTree: true
 
 assets: /mrz-scanner/docs/web/assets/
