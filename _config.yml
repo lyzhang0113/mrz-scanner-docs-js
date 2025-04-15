@@ -3,6 +3,8 @@ repositoryUrl: https://github.com/dynamsoft-docs/mrz-scanner-docs-js/blob/main
 docFullPath: https://www.dynamsoft.com/mrz-scanner/docs/web/
 firstLevelUrl: /mrz-scanner/docs/web
 docHomePage: /mrz-scanner/docs/web/introduction/
+searchIndexName: Crawler-MRZ-Docs
+searchNeedFilter: true
 
 introduction: /mrz-scanner/docs/web/introduction/
 gettingstarted: /mrz-scanner/docs/web/gettingstarted/
@@ -34,6 +36,8 @@ dce_js_api: /camera-enhancer/docs/web/programming/javascript/api-reference/
 code_types: /code-parser/docs/core/code-types/
 dcvb_root: /capture-vision/docs/core/
 mrz_js: /mrz-scanner/docs/web/
+
+dwt: /web-twain/docs/
 
 useVersionTree: true
 

@@ -1,6 +1,8 @@
 ---
-layout: search-page
+layout: search-layout
 title: MRZ Scanner JavaScript Edition Documentation Search
 keywords: MRZ Scanner JavaScript Edition Documentation Search
-cx: 912cbb35fff874a8d
+h1: MRZ Scanner JavaScript Edition Documentation Search
+breadcrumbText: HomePage
+indexName: Crawler-MRZ-Docs
 ---
