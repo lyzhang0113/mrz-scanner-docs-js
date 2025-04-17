@@ -183,7 +183,7 @@ const mrzscanner = new Dynamsoft.MRZScanner({
 });
 ```
 
-Above is the **simplest** way to initialize the MRZ Scanner. Note the configuration object used to set the behaviour of the MRZ Scanner instance. The single property that is **required** to be defined in this configuration object is the **license key**. Without a valid license, the MRZ Scanner view fails to launch, and the user will be met with a license key error message. Please refer to the [licensing](#license) section of the guide for instructions on acquiring a license key.
+Above is the **simplest** way to initialize the [**`MRZScanner`**]({{ site.api }}mrz-scanner.html#mrzscanner). Note the configuration object used to set the behaviour of the MRZ Scanner instance. The single property that is **required** to be defined in this configuration object is the **license key**. Without a valid license, the MRZ Scanner view fails to launch, and the user will be met with a license key error message. Please refer to the [licensing](#license) section of the guide for instructions on acquiring a license key.
 
 ### Step 3: Launching the MRZ Scanner
 
@@ -195,21 +195,21 @@ Above is the **simplest** way to initialize the MRZ Scanner. Note the configurat
 })();
 ```
 
-Now that the MRZ Scanner has been initialized and configured, it is ready to be launched! Upon launch, the MRZ Scanner presents the main **`MRZScannerView`** UI in its container on the page, and is ready to start scanning. Upon scanning an MRZ (via video or static image), the MRZ Scanner then switches to the **`MRZResultView`** , which displays a cropped image of the MRZ document as well as the parsed fields of the MRZ text. Let's break down these two Views:
+Now that the [**`MRZScanner`**]({{ site.api }}mrz-scanner.html#mrzscanner) has been initialized and configured, it is ready to be launched! Upon launch, the MRZ Scanner presents the main **`MRZScannerView`** UI in its container on the page, and is ready to start scanning. Upon scanning an MRZ (via video or static image), the MRZ Scanner then switches to the **`MRZResultView`** , which displays a cropped image of the MRZ document as well as the parsed fields of the MRZ text. Let's break down these two Views:
 
 #### `MRZScannerView`
 
-The `MRZScannerView` is composed of the following UI elements:
+The `MRZScannerView` is configured using [**`MRZScannerViewConfig`**]({{ site.api }}mrz-scanner.html#mrzscannerviewconfig), which is composed of the following UI elements:
 
 1. **Camera View**: The Camera View is the camera viewfinder UI component within the `MRZScannerView`. This viewfinder occupies the majority of the space within the MRZScannerView to give the user a clear view and precise control of the image being scanned.
 
-2. **Scan Guide Frame**: The Scan Guide Frame is an overlay placed on top of the Camera View that guides the user to place the MRZ document in the middle of the Camera View, in order to achieve a fast and accurate scan. The guide frame is enabled **by default**, but may be hidden via the **`MRZScannerViewConfig`** interface. Note that if scan guide frame is enabled, the scanner also crops out the region outside the guide frame.
+2. **Scan Guide Frame**: The Scan Guide Frame is an overlay placed on top of the Camera View that guides the user to place the MRZ document in the middle of the Camera View, in order to achieve a fast and accurate scan. The guide frame is enabled **by default**, but may be hidden via the [**`MRZScannerViewConfig`**]({{ site.api }}mrz-scanner.html#mrzscannerviewconfig) interface. Note that if scan guide frame is enabled, the scanner also crops out the region outside the guide frame.
 
 <div align="center">
    <img src="../assets/imgs/mrz-scan-guides.png" alt="Scan Guide Frames" width="80%" />
 </div>
 
-3. **Format Selector**: Below the scan guide frame, you will also notice a selector box that allows the user to choose which formats the MRZ Scanner should recognize. The formats that show up in the format selector are configurable via the **`MRZScannerConfig`** interface, while the visibility of the format selector itself is configurable via the **`MRZScannerViewConfig`** interface. To learn about MRZ formats, please refer to the [Introduction]({{ site.introduction }}index.html#supported-mrz-formats) page.
+3. **Format Selector**: Below the scan guide frame, you will also notice a selector box that allows the user to choose which formats the MRZ Scanner should recognize. The formats that show up in the format selector are configurable via the [**`MRZScannerConfig`**]({{ site.api }}mrz-scanner.html#mrzscannerconfig) interface, while the visibility of the format selector itself is configurable via the [**`MRZScannerViewConfig`**]({{ site.api }}mrz-scanner.html#mrzscannerviewconfig) interface. To learn about MRZ formats, please refer to the [Introduction]({{ site.introduction }}index.html#supported-mrz-formats) page.
 
 <div align="center">
    <img src="../assets/imgs/format-selector.png" alt="Scan Guide Frames" width="40%" />
@@ -227,7 +227,7 @@ The `MRZScannerView` is composed of the following UI elements:
 
 #### `MRZResultView`
 
-Here is a quick breakdown of the constituent UI elements of the result view:
+Here is a quick breakdown of the constituent UI elements of the result view, controlled by [**`MRZResultViewConfig`**]({{ site.api }}mrz-scanner.html#mrzresultviewconfig):
 
 1. **Original Image**: A cropped image of the scanned MRZ document - this gets displayed at the top of the `MRZResultView` by default.
 

@@ -147,10 +147,11 @@ async function readMRZ() {
         return;
     }
     
-    extractedResults = extractDocumentFields(parsedResults[0]);
-    console.log(recognizedResults);
-    console.log(extractedResults);
-    console.log("Please See Detailed MRZ Result in Console");
+    let extractedResults = JSON.stringify(extractDocumentFields(parsedResults[0]));
+    console.log(extractedResults); // print the result to the console
+    extractedResults = extractedResults.split(",").join("\n");
+    extractedResults = extractedResults.replace(/{"text":|[{"}]/g, "");
+    document.getElementById("divNoteMessage").innerHTML = extractedResults; // print the result to the result div
 }
 
 /**
@@ -166,7 +167,6 @@ function extractDocumentFields(result) {
 
     const fieldWithStatus = (fieldName, raw=false) => ({
     text: raw ? result.getFieldRawValue(fieldName) : result.getFieldValue(fieldName),
-    status: result.getFieldValidationStatus(fieldName),
     });
 
     const parseDate = (yearField, monthField, dayField) => {
@@ -177,11 +177,6 @@ function extractDocumentFields(result) {
     
         return {
             text: `${baseYear}${year}-${result.getFieldValue(monthField)}-${result.getFieldValue(dayField)}`,
-            status: [yearField, monthField, dayField].every(
-            (field) => result.getFieldValidationStatus(field) === Dynamsoft.DCP.EnumValidationStatus.VS_SUCCEEDED
-            )
-            ? Dynamsoft.DCP.EnumValidationStatus.VS_SUCCEEDED
-            : Dynamsoft.DCP.EnumValidationStatus.VS_FAILED,
         };
     };
 
@@ -210,7 +205,7 @@ function extractDocumentFields(result) {
     "Document Number": getDocumentNumber(codeType),
     "Document Type": documentTypeLabel(codeType),
     "Issuing State": fieldWithStatus("issuingState", true),
-    Sex: fieldWithStatus("sex"),
+    Sex: fieldWithStatus("sex", true),
     "Date of Birth (YYYY-MM-DD)": parseDate("birthYear", "birthMonth", "birthDay"),
     "Date of Expiry (YYYY-MM-DD)": parseDate("expiryYear", "expiryMonth", "expiryDay"),
     "Document Type": JSON.parse(result.jsonString).CodeType,
