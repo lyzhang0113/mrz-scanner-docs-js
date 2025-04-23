@@ -20,7 +20,11 @@ This user guide will walk you through a Hello World sample web application that 
 
 ### Trial License
 
-When getting started with MRZ Scanner, we recommend getting your own 30-day trial license through the [customer portal](https://www.dynamsoft.com/customer/license/trialLicense/?product=mrz&utm_source=guide&package=js). The trial license can be renewed via the same customer portal twice, each time for another 15 days, giving you a total of 60 days to develop your own application using the solution. Please contact the [Dynamsoft Support Team](https://www.dynamsoft.com/company/contact/) if you need more time for a full evaluation.
+When getting started with MRZ Scanner, we recommend getting your own 30-day trial license through the following modal:
+
+{% include trialLicense.html %}
+
+The trial license can be renewed via the [customer portal](https://www.dynamsoft.com/customer/license/trialLicense/?product=mrz&utm_source=guide&package=js) twice, each time for another 15 days, giving you a total of 60 days to develop your own application using the solution. Please contact the [Dynamsoft Support Team](https://www.dynamsoft.com/company/contact/) if you need more time for a full evaluation or have any questions.
 
 > [!NOTE]
 > The **MRZ Scanner** license contains a license for the **Dynamsoft Label Recognizer**, **Dynamsoft Code Parser**, and the **Dynamsoft Camera Enhancer** since the MRZ Scanner builds on top of those three products.
