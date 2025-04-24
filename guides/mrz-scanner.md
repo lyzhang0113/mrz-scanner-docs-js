@@ -211,13 +211,13 @@ The `MRZScannerView` is configured using [**`MRZScannerViewConfig`**]({{ site.ap
 
 <div align="center">
    <img src="../assets/imgs/mrz-scan-guides.png" alt="Scan Guide Frames" width="80%" />
-</div>
+</div><br />
 
 3. **Format Selector**: Below the scan guide frame, you will also notice a selector box that allows the user to choose which formats the MRZ Scanner should recognize. The formats that show up in the format selector are configurable via the [**`MRZScannerConfig`**]({{ site.api }}mrz-scanner.html#mrzscannerconfig) interface, while the visibility of the format selector itself is configurable via the [**`MRZScannerViewConfig`**]({{ site.api }}mrz-scanner.html#mrzscannerviewconfig) interface. To learn about MRZ formats, please refer to the [Introduction]({{ site.introduction }}index.html#supported-mrz-formats) page.
 
 <div align="center">
    <img src="../assets/imgs/format-selector.png" alt="Scan Guide Frames" width="40%" />
-</div>
+</div><br />
 
 4. **Resolution/Camera Select Dropdown**: This dropdown allows the user to switch cameras (should they have more than one available on the device), or select a different resolution for the camera that is currently selected.
 
