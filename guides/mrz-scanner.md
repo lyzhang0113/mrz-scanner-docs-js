@@ -20,7 +20,11 @@ This user guide will walk you through a Hello World sample web application that 
 
 ### Trial License
 
-When getting started with MRZ Scanner, we recommend getting your own 30-day trial license through the [customer portal](https://www.dynamsoft.com/customer/license/trialLicense/?product=mrz&utm_source=guide&package=js). The trial license can be renewed via the same customer portal twice, each time for another 15 days, giving you a total of 60 days to develop your own application using the solution. Please contact the [Dynamsoft Support Team](https://www.dynamsoft.com/company/contact/) if you need more time for a full evaluation.
+When getting started with MRZ Scanner, we recommend getting your own 30-day trial license through the following modal:
+
+{% include trialLicense.html %}
+
+The trial license can be renewed via the [customer portal](https://www.dynamsoft.com/customer/license/trialLicense/?product=mrz&utm_source=guide&package=js) twice, each time for another 15 days, giving you a total of 60 days to develop your own application using the solution. Please contact the [Dynamsoft Support Team](https://www.dynamsoft.com/company/contact/) if you need more time for a full evaluation or have any questions.
 
 > [!NOTE]
 > The **MRZ Scanner** license contains a license for the **Dynamsoft Label Recognizer**, **Dynamsoft Code Parser**, and the **Dynamsoft Camera Enhancer** since the MRZ Scanner builds on top of those three products.
@@ -205,15 +209,15 @@ The `MRZScannerView` is configured using [**`MRZScannerViewConfig`**]({{ site.ap
 
 2. **Scan Guide Frame**: The Scan Guide Frame is an overlay placed on top of the Camera View that guides the user to place the MRZ document in the middle of the Camera View, in order to achieve a fast and accurate scan. The guide frame is enabled **by default**, but may be hidden via the [**`MRZScannerViewConfig`**]({{ site.api }}mrz-scanner.html#mrzscannerviewconfig) interface. Note that if scan guide frame is enabled, the scanner also crops out the region outside the guide frame.
 
-<div align="center">
-   <img src="../assets/imgs/mrz-scan-guides.png" alt="Scan Guide Frames" width="80%" />
-</div>
+    <div align="center">
+       <img src="../assets/imgs/mrz-scan-guides.png" alt="Scan Guide Frames" width="80%" />
+    </div><br />
 
 3. **Format Selector**: Below the scan guide frame, you will also notice a selector box that allows the user to choose which formats the MRZ Scanner should recognize. The formats that show up in the format selector are configurable via the [**`MRZScannerConfig`**]({{ site.api }}mrz-scanner.html#mrzscannerconfig) interface, while the visibility of the format selector itself is configurable via the [**`MRZScannerViewConfig`**]({{ site.api }}mrz-scanner.html#mrzscannerviewconfig) interface. To learn about MRZ formats, please refer to the [Introduction]({{ site.introduction }}index.html#supported-mrz-formats) page.
 
-<div align="center">
-   <img src="../assets/imgs/format-selector.png" alt="Scan Guide Frames" width="40%" />
-</div>
+    <div align="center">
+       <img src="../assets/imgs/format-selector.png" alt="Scan Guide Frames" width="40%" />
+    </div><br />
 
 4. **Resolution/Camera Select Dropdown**: This dropdown allows the user to switch cameras (should they have more than one available on the device), or select a different resolution for the camera that is currently selected.
 
