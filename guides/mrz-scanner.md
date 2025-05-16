@@ -127,7 +127,7 @@ Follow these steps in order to build from the source:
 
 3. Open the *Hello World* sample included with the source files located at `/samples/hello-world.html` (relative path to the decompressed directory) using your code editor of choice (like VS Code).
 
-4. Search for 'YOUR_LICENSE_KEY_HERE' ad replace that with your own license key, whether it is trial or full.
+4. Search for 'YOUR_LICENSE_KEY_HERE' and replace that with your own license key, whether it is trial or full.
 
 5. Install project dependencies - in the terminal, navigate to the project root directory and run the following:
     ```bash
@@ -221,13 +221,16 @@ The `MRZScannerView` is configured using [**`MRZScannerViewConfig`**]({{ site.ap
 
 4. **Resolution/Camera Select Dropdown**: This dropdown allows the user to switch cameras (should they have more than one available on the device), or select a different resolution for the camera that is currently selected.
 
-5. **Load Image Button**: This button allows the user to scan a file of an MRZ-containing image from the device's local storage.
+5. **Load Image Button**: This button allows the user to scan a file of an image that contains a MRZ from the device's local storage.
 
 6. **Sound Button**: When toggled on, the MRZ Scanner plays a *beep* sound to signal when the scanner recognizes an MRZ.
 
 7. **Flash Button**: This button is responsible for toggling the flash of the camera (when one is available). The flash button does not appear if the device does not have a camera flash, or the browser does not support camera flash.
 
 8. **Close Scanner Button**: This button closes the MRZ Scanner and takes the user back to the landing page.
+
+> [!NOTE]
+> To learn more on how to customize the MRZScannerView and its corresponding UI elements, we recommend reading the [Customizaton Guide]({{ site.guides }}mrz-scanner-customization.html) as that will shed a lot more light on how to customize the scanner UI to fit your needs.
 
 #### `MRZResultView`
 
@@ -246,4 +249,7 @@ Here is a quick breakdown of the constituent UI elements of the result view, con
 
 ## Next Steps
 
-Now that you got the most basic functionality of the MRZ Scanner up and running, it's time to explore the many ways in which you can customize the MRZ Scanner! To learn more about this, please visit [Customizing the MRZ Scanner]({{ site.guides }}mrz-scanner-customization.html).
+Now that you got the most basic functionality of the MRZ Scanner up and running, it's time to explore the many ways in which the MRZ Scanner can be used, including customization and the ability to read directly from static images and PDFs. To learn more about those two topics, please visit the following articles
+
+- [Customizing the MRZ Scanner]({{ site.guides }}mrz-scanner-customization.html)
+- [Setting up the MRZ Scanner for Static Images and PDFs]({{ site.guides }}mrz-scanner-static-image.html) 

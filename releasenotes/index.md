@@ -12,6 +12,25 @@ permalink: /releasenotes/index.html
 
 # Release Notes
 
+## 2.1.0 (05/15/2025)
+
+## Highlighted Features
+
+- **[UI]** Redesigned the *MRZScannerView* (the main camera view) to have updated icons and better alignment and spacing.
+- Changed the default camera resolution when the camera is opened from **1080p** to **2K** (if the camera supports it).
+- Added a new property to the *MRZScannerViewConfig* interface, **showPoweredByDynamsoft**, which controls the visibility of the `Powered By Dynamsoft` message that is part of the *MRZScannerView* UI.
+- Introduced the ability for the MRZ Scanner to read MRZs from static images and PDFs without the need to use the *MRZScannerView* UI and the Load Image button.
+- Added two new properties to the *MRZScannerViewConfig* interface, **uploadAcceptedTypes** and **uploadFileConverter**, which convert static images and PDFs to blobs which can then be read by the MRZ Scanner.
+- Redeveloped the `launch()` method so that it can take a static image or file as input. To learn how to use that, please refer to [Setting up the MRZ Reader for Static Images]({{ site.guides }}mrz-scanner-static-images.html)
+- Integrated Dynamsoft's [Mobile Web Capture](https://www.dynamsoft.com/mobile-web-capture/docs/introduction/) with the MRZ Scanner (JavaScript Edition) to allow the user to edit the scanned MRZ image like a document.
+- Added `NationalityRaw` and `IssuingStateRaw` to the `MRZData` interface that represent the raw values of these fields 
+
+## Fixes
+
+- Fixed parsing of German IDs returning `G<<` instead of `G`.
+- `engineResourcePaths` is now set before `initLicense` (internally) to prevent a bug when the user wants to implement a custom `engineResourcePaths`.
+- Update the trial license banner link to point to https://www.dynamsoft.com/customer/license/trialLicense?product=mrz&deploymenttype=web
+
 ## 2.0.0 (03/13/2025)
 
 The **MRZ Scanner JavaScript Edition** has been redesigned and redeveloped to now include a **ready-to-use, fully developed UI** to ease the development process while providing even better functionality.
