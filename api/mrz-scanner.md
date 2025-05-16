@@ -45,12 +45,14 @@ const mrzScanner = new Dynamsoft.MRZScanner({
 
 ### launch()
 
-Starts the **MRZ scanning workflow**.
+Starts the **MRZ scanning workflow**. If the method is run without a file input, the MRZScannerView UI will pop up and allow the user to scan MRZs using their camera. Alternatively, if the method is run with a file input parameter, the MRZ Scanner will read the MRZ from the file and display the result in a `MRZResultView`.
 
 #### Syntax
 
 ```ts
 launch(): Promise<MRZResult>
+
+launch(fileToProcess): Promise<MRZResult>
 ```
 
 #### Returns
@@ -67,6 +69,18 @@ A `Promise` resolving to a `MRZResult` object.
         console.log(result); // print the MRZResult to the console
     } catch (error){
         console.error(error);
+    }
+})();
+```
+
+```ts
+(async () => {
+    // Launch the scanner and wait for the result
+    try {
+        const result = await mrzScanner.launch(fileToProcess);
+        console.log(result); // print the MRZResult to the console
+    } catch (error){
+        console.error("Error processing file:", error);
     }
 })();
 ```
@@ -177,6 +191,9 @@ interface MRZScannerViewConfig {
   showSoundToggle?: boolean;
 
   enableMultiFrameCrossFilter?: boolean; // false by default
+
+  uploadAcceptedTypes?: string;
+  uploadFileConverter?: (file: File) => Promise<Blob>;
 }
 ```
 
@@ -190,7 +207,9 @@ interface MRZScannerViewConfig {
 | `showUploadImage`       | `boolean`                | Determines the visibility of the "load image" icon to allow the user to select a static image from their local photo library.              |
 | `showFormatSelector`    | `boolean`                | Determines the visibility of the format selector box that allows the user to restrict the MRTD format(s) that are being read.  |
 | `showSoundToggle`       | `boolean`                | Determines the visibility of the "sound" icon that allows the user to play a beep sound once the MRZ is recognized.        |
-| `enableMultiFrameCrossFilter`      | `boolean`     | Enables or disables the MultiFrameResultCrossFilter that can improve the accuracy of the MRZ result, but possibly at the cost of speed.         |
+| `enableMultiFrameCrossFilter`      | `boolean`     | Enables or disables the MultiFrameResultCrossFilter that can improve the accuracy of the MRZ result, but possibly at the cost of speed.   |
+| `uploadAcceptedTypes`      | `string`     | Configures which image and file format(s) the library will accept if the user chooses to decode static images. |
+| `uploadFileConverter`      | `function`     | Converts non-image files (e.g. PDF) to blobs so that they can be read by the MRZ Scanner.  |
 
 #### Example
 
@@ -200,7 +219,21 @@ const mrzScanViewConfig = {
     showUploadImage: true, // hides the load image icon that shows up in the toolbar at the top of the view; true by default
     showFormatSelector: true, // hides the format selector box if more than two MRZ types are assigned; true by default
     showSoundToggle: false, // hides the sound icon that allows the user to control whether a beep is played once an MRZ is recognized; true by default
+    showPoweredByDynamsoft?: boolean; // hides the "Powered By Dynamsoft" message that appears on the scanner UI; true by default
     enableMultiFrameCrossFilter: true, // turning the filter off could improve the speed but at the cost of result accuracy; true by default
+
+    uploadAcceptedTypes: "image/*,application/pdf", // allows the user to upload static images and PDFs to be read by the MRZ Scanner - default is "image/*"
+    uploadFileConverter: async (file) => {
+        if (file.type === "application/pdf") {
+            // Example PDF to image conversion
+            const pdfData = await convertPDFToImage(file);
+            return pdfData;
+        }
+
+        // For other non-image types, you can add more conversion logic
+        // If it's not a supported type, throw an error
+        throw new Error("Unsupported file type");
+    },
 };
 
 const mrzConfig = {

@@ -15,7 +15,7 @@ permalink: /guides/mrz-scanner-customization.html
 >
 >Before going into the ways that you can customize the MRZ Scanner, please read the [MRZ Scanner JavaScript Edition User Guide]({{ site.guides }}mrz-scanner.html).
 
-This guide expands on the User Guide that explored the MRZ Scanner Hello World sample project. Here we explore ways to customize the UI as well as the performance of the MRZ Scanner. We will walk through the three main configuration interfaces - [**`MRZScannerConfig`**]({{ site.api }}mrz-scanner.html#mrzscannerconfig), [**`MRZScannerViewConfig`**][**`MRZScannerViewConfig`**]({{ site.api }}mrz-scanner.html#mrzscannerviewconfig), and [**`MRZResultViewConfig`**][**`MRZScannerViewConfig`**]({{ site.api }}mrz-scanner.html#mrzresultviewconfig). These configuration interfaces make customizing the MRZ Scanner as easy as adding or changing a few properties in the instance constructor. Every sample is a variation on the previous Hello World sample with a few additional properties defined in the configuration interfaces, and so we only show the differing portion rather than all the code.
+This guide expands on the User Guide that explored the MRZ Scanner Hello World sample project. Here we explore ways to customize the UI as well as the performance of the MRZ Scanner. We will walk through the three main configuration interfaces - [**`MRZScannerConfig`**]({{ site.api }}mrz-scanner.html#mrzscannerconfig), [**`MRZScannerViewConfig`**]({{ site.api }}mrz-scanner.html#mrzscannerviewconfig), and [**`MRZResultViewConfig`**]({{ site.api }}mrz-scanner.html#mrzresultviewconfig). These configuration interfaces make customizing the MRZ Scanner as easy as adding or changing a few properties in the instance constructor. Every sample is a variation on the previous Hello World sample with a few additional properties defined in the configuration interfaces, and so we only show the differing portion rather than all the code.
 
 ## `MRZScannerConfig` Overview
 
@@ -92,7 +92,13 @@ const mrzScanner = new Dynamsoft.MRZScanner({
 
 6. **`showSoundToggle`** (default value `true`) - the MRZ Scanner can play a beeping sound upon successfully recognizing an MRZ. This feature depends on browser support. When this property is `true`, the sound toggle icon appears at the top of the MRZScannerView in a grey disabled state. To hide this feature altogether, set this property to `false`.
 
-7. **`enableMultiFrameCrossFilter`** (default value `true`) - enable the multi-frame result cross filter to improve read accuracy at the cost of a slight increase to MRZ read time.
+7. **`showPoweredByDynamsoft`** (default value `true`) - the scanner UI includes a "Powered By Dynamsoft" message that shows at the bottom. This property allows you to hide this text if you wish.
+
+8. **`enableMultiFrameCrossFilter`** (default value `true`) - enable the multi-frame result cross filter to improve read accuracy at the cost of a slight increase to MRZ read time.
+
+9. **`uploadAcceptedTypes`** (default value `"image/*"`) - allows the user to configure which image and file format(s) the library will accept if the user chooses to decode static images instead of using the camera view to scan MRZs.
+
+10. **`uploadFileConverter`** - this function converts non-image files (e.g. PDF) to blobs so that they can be read by the MRZ Scanner. It is essential that this function is used if you would like to support reading PDF files in your web app.
 
 > [!NOTE]
 >
@@ -110,7 +116,20 @@ const mrzScanner = new Dynamsoft.MRZScanner({
       showUploadImage: false, // hides the load image icon that shows up in the toolbar at the top of the view; true by default
       showFormatSelector: false, // hides the format selector box if more than two MRZ types are assigned; true by default
       showSoundToggle: false, // hides the sound icon that allows the user to control whether a beep is played once an MRZ is recognized; true by default
+      showPoweredByDynamsoft: false, // hides the "Powered By Dynamsoft" message that appears on the scanner UI; true by default
       enableMultiFrameCrossFilter: false, // turning the filter off could improve the speed but at the cost of result accuracy; true by default
+
+      uploadAcceptedTypes: "image/*,application/pdf", // allows the user to upload static images and PDFs to be read by the MRZ Scanner - default is "image/*"
+      uploadFileConverter: async (file) => {
+         if (file.type === "application/pdf") {
+            // Example PDF to image conversion
+            const pdfData = await convertPDFToImage(file);
+            return pdfData;
+         }
+        // For other non-image types, you can add more conversion logic
+        // If it's not a supported type, throw an error
+        throw new Error("Unsupported file type");
+      },
    }
 });
 ```
@@ -123,9 +142,15 @@ The `MRZScannerView` provides a guide frame for each of the three MRTD formats. 
 
 2. Otherwise, if both **ID (TD1)** and **ID (TD2)** are selected or only **ID (TD1)**, (but not passport), then the frame for ID (**TD1**) will be displayed.
 
-3. The ID(TD2) guide frame only gets displayed if **ID (TD2)** is the only selected format.
+3. The ID (TD2) guide frame only gets displayed if **ID (TD2)** is the only selected format.
 
 Please contact the [Dynamsoft Support Team](https://www.dynamsoft.com/company/contact/) for any further inquiries, or to customize the frame guide selection logic.
+
+### Reading Static Images using the MRZ Scanner
+
+Starting from v2.1 of the MRZ Scanner, the library is now able to read MRZs **directly** from static images and PDFs. To support this, the MRZScannerViewConfig will need to be configured to support that, especially for PDFs.
+
+To learn more on how to create a web application that supports static image/PDF reading using the MRZ Scanner, please refer to this [guide]({{ site.guides }}mrz-scanner-static-image.html). Furthermore, please refer to the full File Input Sample that the previously linked guide walks you through.
 
 ## `MRZResultViewConfig` Overview
 

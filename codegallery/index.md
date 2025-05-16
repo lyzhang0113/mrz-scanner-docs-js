@@ -20,6 +20,24 @@ As mentioned previously, this is the most rudimentary and basic implementation o
 
 The full code of Hello World can be found [**here**](helloworld/index.md).
 
+## React
+
+In this sample, a Hello World implementation is done with the [React](https://react.dev/) framework.
+
+Please find the full code of this sample [**here**](https://github.com/Dynamsoft/mrz-scanner-javascript/tree/main/samples/frameworks/react-hooks).
+
+## Angular
+
+In this sample, a Hello World implementation is done with the [Angular](https://angular.dev/) framework.
+
+Please find the full code of this sample [**here**](https://github.com/Dynamsoft/mrz-scanner-javascript/tree/main/samples/frameworks/angular).
+
+## Vue
+
+In this sample, a Hello World implementation is done with the [Vue](https://vuejs.org/) framework.
+
+Please find the full code of this sample [**here**](https://github.com/Dynamsoft/mrz-scanner-javascript/tree/main/samples/frameworks/vue).
+
 ## Demo
 
 The demo implementation adds a bit more colour and character to the Hello World implementation, and in turn helping you create a presentable and friendly design for your MRZ scanning application!
