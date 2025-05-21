@@ -61,9 +61,9 @@ The simplest way to include the SDK is to use either the [**jsDelivr**](https://
 When using a framework such as **React**, **Vue** or **Angular**, we recommend adding the package as a dependency using a package manager such as **npm** or **yarn**:
 
   ```sh
-  npm i dynamsoft-mrz-scanner@2.0.0 -E
+  npm i dynamsoft-mrz-scanner@2.1.0 -E
   # or
-  yarn add dynamsoft-mrz-scanner@2.0.0 -E
+  yarn add dynamsoft-mrz-scanner@2.1.0 -E
   ```
 
 > [!WARNING]

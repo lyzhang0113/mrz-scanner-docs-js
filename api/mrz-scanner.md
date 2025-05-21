@@ -434,8 +434,10 @@ export interface MRZData {
 | `lastName`        | `string`  | The last name of the MRZ document holder.      |
 | `age`             | `string`  | The age of the MRZ document holder.      |
 | `sex`             | `string`  | The sex of the MRZ document holder.      |
-| `issuingState`    | `string`  | The issuing state of the MRZ document.     |
-| `nationality`     | `string`  | The nationality of the MRZ document holder.      |
+| `issuingState`    | `string`  | The issuing state (represented as the full name of the country/region) of the MRZ document.     |
+| `issuingStateRaw`    | `string`  | The raw text from the MRZ string of the issuing state of the MRZ document.     |
+| `nationality`     | `string`  | The nationality (represented as the full name of the country/region) of the MRZ document holder.      |
+| `nationalityRaw`     | `string`  | The raw text from the MRZ string representing the nationality of the document holder.      |
 | `dateOfBirth`     | `MRZDate` | The date of birth of the MRZ document holder.      |
 | `dateOfExpiry`    | `MRZDate` | The date of expiry of the MRZ document.      |
 
